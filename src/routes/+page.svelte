@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
     import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte";
-    import { SearchSolid, UserCircleSolid } from "flowbite-svelte-icons";
+    import { SearchSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
     
@@ -11,223 +11,13 @@
   let placement = $state("right");
 
   let data = $state([
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-  {
-    title: "Lorem ipsum dolor.",
-    email: "naim@gmail.com",
-    password: "123",
-    note: "Lorem ipsum dolor.",
-  },
-]);
+      {
+        title: "Lorem ipsum dolor.",
+        email: "naim@gmail.com",
+        password: "123",
+        note: "Lorem ipsum dolor.",
+      }
+   ]);
 
 
   // input login
@@ -286,18 +76,17 @@ function getInput() {
 
 
 </script>
-
 <!-- nav -->
-<div class="w-[100vw] h-20 border-b border-black/30 flex justify-around items-center bg-linear-65 from-pink-100 to-orange-100">
+<div class="w-[100vw] h-20 border-b border-black/30 flex justify-around items-center bg-linear-65 from-sky-100 to-white">
     <ButtonGroup class="w-1/2 bg-white dark:bg-gray-950">
         <InputAddon class="bg-gray-100">
            <SearchSolid class="shrink-0 h-6 w-6" />
         </InputAddon>
         <Input id="website-admin" placeholder="Search..." class="bg-transparent dark:text-white"/>
     </ButtonGroup>
-   <Button on:click={expoRT} class="bg-yellow-500">Export</Button>
-<Button on:click={importVault} class="bg-green-500">Import</Button>
-   <Button class="text-black rounded-full bg-red-500">Create Item</Button>
+   <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-white border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
+<button type="button" onclick={importVault} class="border p-2 rounded-xl bg-white border-blue-500 shadow text-blue-800 dark:bg-wite">Import</button>
+   <button class="text-black rounded-full p-2 border border-green-300 text-green-800">Create</button>
     <Dropdown simple>
         <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black">Login</Button></DropdownItem>
     </Dropdown>
@@ -308,25 +97,33 @@ function getInput() {
 
 
 
-<div class="w-[100vw] h-[91vh] bg-linear-65 from-pink-50 to-orange-50 flex">
+<div class="w-[100vw] h-[91vh] bg-linear-65 from-sky-100 to-white flex">
     <!-- list -->
     <div class="w-1/2 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
-      {#each data as dat}
-        <button type="button" class="w-full h-15 px-1 flex justify-start items-center my-1 hover:bg-red-100/50" onclick={() => {
-            datHeiglight = dat;
-        }}>
-            <div class="w-15 h-15 rounded-2xl bg-white shadow mx-2 flex justify-center items-center"><UserCircleSolid class="shrink-0 h-6 w-6" /></div>
-            <h1 class="">{dat.title}</h1>
-        </button>
-      {/each}
-
-    </div>
+      {#each [...data].reverse() as dat}
+      <button type="button" class="w-full h-15 bg-white rounded-md px-1 flex justify-start items-center my-1 hover:bg-blue-100" onclick={() => {
+        datHeiglight = dat;
+      }}>
+            <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
+              " alt="" class=""></div>
+              <h1 class="">{dat.title}</h1>
+            </button>
+            {/each}
+          </div>
     <!-- heiglight -->
     <div class="w-1/2 h-full p-3 flex flex-col gap-2">
+        <div class="w-full h-15 flex justify-end items-center">
+          <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md">delete</button>
+        </div>
         <input type="text" class="rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
         <input type="email" class="rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
         <input type="text" class="rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
         <textarea name="" id="" class="w-full h-100 rounded-md">{datHeiglight.note}</textarea>
+        <input type="text" class="rounded-md outline-0" placeholder="Website"/>
+        <div class="w-full border border-black/30 p-2 rounded-md font-thin">
+          <h1 class="">midifikasi : 12-09-2025</h1>
+          <h1 class="">dibuat : 12-08-2025</h1>
+        </div>
     </div>
 </div>
 
@@ -338,11 +135,12 @@ function getInput() {
 <Drawer {placement} bind:open={open5}>
     <div class="w-full h-auto mt-10 flex flex-col">
         <div class="flex flex-col gap-2">
-            <input type="text" name="" id="" class="border w-full rounded-md" placeholder="Title" bind:value={title}/>
-            <input type="email" name="" id="" class="border w-full rounded-md" placeholder="Email" bind:value={email}/>
-            <input type="text" name="" id="" class="border w-full rounded-md" placeholder="Password" bind:value={password}/>
+            <input type="text" class="border w-full rounded-md" placeholder="Title" bind:value={title}/>
+            <input type="email" class="border w-full rounded-md" placeholder="Email" bind:value={email}/>
+            <input type="text" class="border w-full rounded-md" placeholder="Password" bind:value={password}/>
             <h1 class="">Note</h1>
-            <textarea name="" id="" class="w-full h-100 rounded-md" bind:value={note}></textarea>
+            <textarea class="w-full h-100 rounded-md" bind:value={note}></textarea>
+            <input type="text" class="border w-full rounded-md" placeholder="website"/>
             <button type="button" class="p-2 rounded-md bg-amber-300" onclick={getInput}>Create</button>
         </div>
     </div>
