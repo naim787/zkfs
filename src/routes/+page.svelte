@@ -120,18 +120,25 @@ function getInput() {
           
     <!-- heiglight -->
     <div class="w-full h-full p-3 flex flex-col gap-2 dark:bg-gray-800">
-        <div class="w-full h-15 flex justify-end items-center">
-          <button onclick={() => ((placement = "right"), (open5 = true))} type="button" class="p-2 border border-yellow-500 text-yellow-800 bg-yello-500/20 rounded-md"><PenSolid class="shrink-0 h-6 w-6" /></button>
-        </div>
-        <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
-        <input type="email" class="dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
-        <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
-        <textarea name="" id="" class="w-full h-100 dark:bg-black rounded-md">{datHeiglight.note}</textarea>
-        <input type="text" class="dark:bg-black rounded-md outline-0" placeholder="Website"/>
-        <div class="w-full border border-black/30 p-2 rounded-md font-thin">
-          <h1 class="">midifikasi : 12-09-2025</h1>
-          <h1 class="">dibuat : 12-08-2025</h1>
-        </div>
+        <!-- <div class="w-full h-15 flex justify-end items-center">
+        </div> -->
+        {#if datHeiglight.email}
+          <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
+          <input type="email" class="dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
+          <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
+          <textarea name="" id="" class="w-full h-100 dark:bg-black rounded-md">{datHeiglight.note}</textarea>
+          <input type="text" class="dark:bg-black rounded-md outline-0" placeholder="Website"/>
+          <div class="w-full border border-black/30 p-2 rounded-md font-thin">
+            <h1 class="">midifikasi : 12-09-2025</h1>
+            <h1 class="">dibuat : 12-08-2025</h1>
+          </div>
+          <button type="button" class="bg-yellow-500 p-2 rounded-xl">Save</button>
+          {:else}
+          <div class="w-full h-full bg-red-500 flex">
+            <h1 class="m-auto"></h1>
+          </div>
+        {/if}
+
     </div>
 </div>
 
