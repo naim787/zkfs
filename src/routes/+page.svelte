@@ -139,7 +139,7 @@ function getInput() {
     <div class="w-full h-full p-3 flex flex-col gap-2 dark:bg-gray-800">
         <!-- <div class="w-full h-15 flex justify-end items-center">
         </div> -->
-        {#if datHeiglight.email}
+        {#if data.length >= 1}
          <div class="flex">
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
           <input type="text" class="w-full dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
