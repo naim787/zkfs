@@ -111,7 +111,7 @@ function getInput() {
     <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
         {#each [...data].reverse() as dat}
         <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
-          <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500 shadow shadow-2xl shadow-blue-500" />
+          <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" />
               <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
                   " alt="" class=""></div>
               <h1 class="">{dat.title}</h1>
