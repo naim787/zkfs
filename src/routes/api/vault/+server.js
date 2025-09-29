@@ -16,6 +16,8 @@ export async function POST({ request }) {
   console.log("chipertext : ", ciphertext)
   console.log("salt : ", salt)
   console.log("iv : ", iv)
+  console.log("storedvault : ", storedVault)
+
   return json({ status: "Vault terenkripsi berhasil disimpan" });
 }
 
