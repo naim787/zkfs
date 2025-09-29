@@ -111,9 +111,8 @@ function getInput() {
     <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
         {#each [...data].reverse() as dat}
         <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
-          <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" />
-              <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
-                  " alt="" class=""></div>
+             <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" />
+              <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico" alt="" class=""></div>
               <h1 class="">{dat.title}</h1>
           </button>
         {/each}
@@ -122,7 +121,7 @@ function getInput() {
     <!-- heiglight -->
     <div class="w-full h-full p-3 flex flex-col gap-2 dark:bg-gray-800">
         <div class="w-full h-15 flex justify-end items-center">
-          <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md"><PenSolid class="shrink-0 h-6 w-6" /></button>
+          <button onclick={() => ((placement = "right"), (open5 = true))} type="button" class="p-2 border border-yellow-500 text-yellow-800 bg-yello-500/20 rounded-md"><PenSolid class="shrink-0 h-6 w-6" /></button>
         </div>
         <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
         <input type="email" class="dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
