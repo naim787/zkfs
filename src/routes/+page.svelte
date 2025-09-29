@@ -72,9 +72,10 @@ function getInput() {
         email,
         password,
         note,
+        url,
     },
     ];
-    open5 = false; title = ""; email = "";password = ""; note = "";
+    open5 = false; title = ""; email = "";password = ""; note = "";url = "";
 }
 
 
