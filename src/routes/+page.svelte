@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
     import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem, DarkMode } from "flowbite-svelte";
-    import { FileCopySolid, PenSolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
+    import { ClipboardCleanSolid, FileCopySolid, PenSolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
     
@@ -13,7 +13,14 @@
 
 
   // list left data
-  let data = $state([]);
+  let data = $state([
+    {
+      title :"tony",
+      email : "naimm@gmail.com",
+      password : "123",
+      note : "123",
+    }
+  ]);
 
 
   // input login
@@ -116,11 +123,26 @@ function getInput() {
         <!-- <div class="w-full h-15 flex justify-end items-center">
         </div> -->
         {#if datHeiglight.email}
-          <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
-          <input type="email" class="dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
-          <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
+         <div class="flex">
+           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
+          <input type="text" class="w-full dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
+         </div>
+         <div class="flex">
+           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
+          <input type="email" class="w-full dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
+         </div>
+         <div class="flex">
+           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
+          <input type="text" class="w-full dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
+         </div>
+         <div class="flex">
+           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
           <textarea name="" id="" class="w-full h-100 dark:bg-black rounded-md">{datHeiglight.note}</textarea>
-          <input type="text" class="dark:bg-black rounded-md outline-0" placeholder="Website"/>
+         </div>
+         <div class="flex">
+           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
+          <input type="text" class="w-full dark:bg-black rounded-md outline-0" placeholder="Website"/>
+         </div>
           <div class="w-full border border-black/30 p-2 rounded-md font-thin">
             <h1 class="">midifikasi : 12-09-2025</h1>
             <h1 class="">dibuat : 12-08-2025</h1>
