@@ -141,14 +141,14 @@ function getInput() {
 
 <!-- drawer -->
 <Drawer {placement} bind:open={open5}>
-    <div class="w-full h-auto mt-10 flex flex-col">
+    <div class="w-full h-auto mt-10 flex flex-col dark:text-white">
         <div class="flex flex-col gap-2">
-            <input type="text" class="border w-full rounded-md" placeholder="Title" bind:value={title}/>
-            <input type="email" class="border w-full rounded-md" placeholder="Email" bind:value={email}/>
-            <input type="text" class="border w-full rounded-md" placeholder="Password" bind:value={password}/>
+            <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="Title" bind:value={title}/>
+            <input type="email" class="border w-full dark:bg-black rounded-md" placeholder="Email" bind:value={email}/>
+            <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="Password" bind:value={password}/>
             <h1 class="">Note</h1>
-            <textarea class="w-full h-100 rounded-md" bind:value={note}></textarea>
-            <input type="text" class="border w-full rounded-md" placeholder="website"/>
+            <textarea class="w-full dark:bg-black h-100 rounded-md" bind:value={note}></textarea>
+            <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="website"/>
             <button type="button" class="p-2 rounded-md bg-amber-300" onclick={getInput}>Create</button>
         </div>
     </div>
