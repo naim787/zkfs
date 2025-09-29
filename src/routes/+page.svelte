@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
     import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem, DarkMode } from "flowbite-svelte";
-    import { FileCopySolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
+    import { FileCopySolid, PenSolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
     
@@ -122,7 +122,7 @@ function getInput() {
     <!-- heiglight -->
     <div class="w-full h-full p-3 flex flex-col gap-2 dark:bg-gray-800">
         <div class="w-full h-15 flex justify-end items-center">
-          <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md">delete</button>
+          <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md"><PenSolid class="shrink-0 h-6 w-6" /></button>
         </div>
         <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
         <input type="email" class="dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
