@@ -13,14 +13,7 @@
 
 
   // list left data
-  let data = $state([
-      {
-        title: "Lorem",
-        email: "naim@gmail.com",
-        password: "123",
-        note: "Lorem ipsum dolor.",
-      }
-   ]);
+  let data = $state([]);
 
 
   // input login
