@@ -21,6 +21,8 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.13",
+		"chokidar": "^4.0.3",
+		"simple-git": "^3.28.0",
 		"tailwindcss": "^4.1.13"
 	}
 }

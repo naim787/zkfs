@@ -6,10 +6,13 @@
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
     
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
-    
+
+    // drawer input
   let open5 = $state(false);
   let placement = $state("right");
 
+
+  // list left data
   let data = $state([
       {
         title: "Lorem ipsum dolor.",
@@ -21,16 +24,14 @@
 
 
   // input login
-let title = $state("");
-let email = $state("");
-let password = $state("");
-let note = $state("");
+  let title = $state("");
+  let email = $state("");
+  let password = $state("");
+  let note = $state("");
 
 
-// e2ee
-
+  // e2ee
   let masterPassword = "123";
-
   async function expoRT() {
     const result = await encryptVault(data, masterPassword);
 
@@ -70,6 +71,7 @@ function getInput() {
         note,
     },
     ];
+    open5 = false; title = ""; email = "";password = ""; note = "";
 }
 
 
@@ -77,19 +79,24 @@ function getInput() {
 
 </script>
 <!-- nav -->
-<div class="w-[100vw] h-20 border-b border-black/30 flex justify-around items-center bg-linear-65 from-sky-100 to-white">
+<div class="w-[100vw] h-26 border-b border-black/30 flex flex-col items-center bg-linear-65 from-sky-100 to-white">
+  <div class="w-full h-20 flex items-center justify-center ">
+    <img src="./favicon.webp" alt="" class="w-10 rounded-full">
     <ButtonGroup class="w-1/2 bg-white dark:bg-gray-950">
-        <InputAddon class="bg-gray-100">
-           <SearchSolid class="shrink-0 h-6 w-6" />
+        <InputAddon class="bg-gray-900">
+           <SearchSolid class="text-white h-6 w-6" />
         </InputAddon>
         <Input id="website-admin" placeholder="Search..." class="bg-transparent dark:text-white"/>
     </ButtonGroup>
-   <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-white border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
-<button type="button" onclick={importVault} class="border p-2 rounded-xl bg-white border-blue-500 shadow text-blue-800 dark:bg-wite">Import</button>
-   <button class="text-black rounded-full p-2 border border-green-300 text-green-800">Create</button>
-    <Dropdown simple>
-        <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black">Login</Button></DropdownItem>
-    </Dropdown>
+    <button class="rounded-xl p-2 border border-green-500 text-green-800 bg-green-500/20">Create</button>
+     <Dropdown simple>
+         <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black">Login</Button></DropdownItem>
+     </Dropdown>
+  </div>
+  <div class="w-full h-17  flex items-center justify-start">
+    <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-white border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
+    <button type="button" onclick={importVault} class="border p-2 rounded-xl bg-white border-blue-500 shadow text-blue-800 dark:bg-wite">Import</button>
+  </div>
 </div>
 
 
@@ -99,7 +106,7 @@ function getInput() {
 
 <div class="w-[100vw] h-[91vh] bg-linear-65 from-sky-100 to-white flex">
     <!-- list -->
-    <div class="w-1/2 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
+    <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
       {#each [...data].reverse() as dat}
       <button type="button" class="w-full h-15 bg-white rounded-md px-1 flex justify-start items-center my-1 hover:bg-blue-100" onclick={() => {
         datHeiglight = dat;
@@ -110,8 +117,9 @@ function getInput() {
             </button>
             {/each}
           </div>
+          
     <!-- heiglight -->
-    <div class="w-1/2 h-full p-3 flex flex-col gap-2">
+    <div class="w-full h-full p-3 flex flex-col gap-2">
         <div class="w-full h-15 flex justify-end items-center">
           <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md">delete</button>
         </div>
