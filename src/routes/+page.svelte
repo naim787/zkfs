@@ -15,7 +15,7 @@
   // list left data
   let data = $state([
       {
-        title: "Lorem ipsum dolor.",
+        title: "Lorem",
         email: "naim@gmail.com",
         password: "123",
         note: "Lorem ipsum dolor.",
@@ -95,7 +95,7 @@ function getInput() {
     </Dropdown>
     <DarkMode />
   </div>
-  <div class="w-full h-17  flex items-center justify-start">
+  <div class="w-full h-17  flex items-center justify-start gap-2">
     <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-yellow-500/20 dark:text-yellow-200 border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
     <button type="button" onclick={importVault} class="border p-2 rounded-xl bg-blue-500/20 dark:text-blue-200 border-blue-500 shadow text-blue-800 dark:bg-wite">Import</button>
   </div>
