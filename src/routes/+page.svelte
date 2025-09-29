@@ -119,7 +119,7 @@ function getInput() {
           </div>
           
     <!-- heiglight -->
-    <div class="w-full h-full p-3 flex flex-col gap-2">
+    <div class="w-full h-full p-3 flex flex-col gap-2 dark:bg-gray-800">
         <div class="w-full h-15 flex justify-end items-center">
           <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md">delete</button>
         </div>
