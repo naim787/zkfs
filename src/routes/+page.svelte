@@ -134,8 +134,11 @@ function getInput() {
           </div>
           <button type="button" class="bg-yellow-500 p-2 rounded-xl">Save</button>
           {:else}
-          <div class="w-full h-full bg-red-500 flex">
-            <h1 class="m-auto"></h1>
+          <div class="w-full h-full flex justify-center">
+            <div class="flex w-[50%] m-auto gap-2">
+              <img src="./favicon.webp" alt="" class="w-20 rounded-xl">
+              <h1 class="text-2xl">Welcome to zkfs, an application that you can rely on to encrypt your data even if you don't trust the device you use yourself.</h1>
+            </div>
           </div>
         {/if}
 
