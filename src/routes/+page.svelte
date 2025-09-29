@@ -20,7 +20,21 @@
       password : "123",
       note : "123",
       url : "google.com",
-    }
+    },
+    {
+      title :"naim",
+      email : "naimmmmab@gmail.com",
+      password : "123",
+      note : "jaga deggan baik",
+      url : "github.com",
+    },
+    {
+      title :"naim",
+      email : "naimmmmab@gmail.com",
+      password : "123",
+      note : "jaga deggan baik",
+      url : "photos.google.com",
+    },
   ]);
 
 
@@ -115,7 +129,7 @@ function getInput() {
         {#each [...data].reverse() as dat}
         <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
              <!-- <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" /> -->
-              <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.ico`} alt="" class=""></div>
+              <div class="w-10 h-10 mx-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.ico`} alt="" class="shadow shadow-white rounded-xl w-full object-cover"></div>
               <h1 class="flex">{dat.title}</h1>
           </button>
         {/each}
@@ -144,7 +158,7 @@ function getInput() {
          </div>
          <div class="flex">
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
-          <input type="text" class="w-full dark:bg-black rounded-md outline-0" placeholder="Website"/>
+          <input type="text" class="w-full dark:bg-black rounded-md outline-0" placeholder="Website" value={datHeiglight.url}/>
          </div>
           <div class="w-full border border-black/30 bg-gray-200 dark:bg-gray-900 p-2 rounded-md font-thin">
             <h1 class="">midifikasi : 12-09-2025</h1>
