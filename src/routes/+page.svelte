@@ -90,10 +90,10 @@ function getInput() {
         <Input id="website-admin" placeholder="Search..." class="bg-transparent dark:text-white"/>
     </ButtonGroup>
     <button class="rounded-xl p-2 border border-green-500 text-green-800 dark:text-green-300 bg-green-500/20">Create</button>
-    <DarkMode />
-     <Dropdown simple>
+    <Dropdown simple>
          <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black dark:text-white">Login</Button></DropdownItem>
-     </Dropdown>
+    </Dropdown>
+    <DarkMode />
   </div>
   <div class="w-full h-17  flex items-center justify-start">
     <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-yellow-500/20 dark:text-yellow-200 border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
