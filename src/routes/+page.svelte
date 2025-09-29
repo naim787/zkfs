@@ -15,7 +15,7 @@
   // list left data
   let data = $state([
     {
-      title :"tony",
+      title :"tony hhahshshsh",
       email : "naimm@gmail.com",
       password : "123",
       note : "123",
@@ -127,10 +127,10 @@ function getInput() {
     <!-- list -->
     <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
         {#each [...data].reverse() as dat}
-        <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
+        <button type="button" class="w-full overflow-hidden h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
              <!-- <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" /> -->
-              <div class="w-10 h-10 mx-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.ico`} alt="" class="shadow shadow-white rounded-xl w-full object-cover"></div>
-              <h1 class="flex">{dat.title}</h1>
+              <div class="w-10 h-10 mr-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.ico`} alt="" class="shadow shadow-white rounded-xl w-full object-cover"></div>
+              <div class="flex whitespace-nowrap">{dat.title}</div>
           </button>
         {/each}
     </div>
