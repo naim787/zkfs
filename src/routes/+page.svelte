@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
     import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem, DarkMode } from "flowbite-svelte";
-    import { SearchSolid, UserSolid } from "flowbite-svelte-icons";
+    import { FileCopySolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
     
@@ -109,14 +109,15 @@ function getInput() {
 <div class="w-[100vw] h-[91vh] bg-linear-65 from-sky-100 to-white flex dark:from-sky-900 dark:to-gray-900 dark:text-white dark:border-white">
     <!-- list -->
     <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
-      {#each [...data].reverse() as dat}
-      <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
-          <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
-              " alt="" class=""></div>
-          <h1 class="">{dat.title}</h1>
-      </button>
-            {/each}
-          </div>
+        {#each [...data].reverse() as dat}
+        <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
+          <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" />
+              <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
+                  " alt="" class=""></div>
+              <h1 class="">{dat.title}</h1>
+          </button>
+        {/each}
+    </div>
           
     <!-- heiglight -->
     <div class="w-full h-full p-3 flex flex-col gap-2 dark:bg-gray-800">
