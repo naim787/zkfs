@@ -1,6 +1,6 @@
 <script>
   import "../app.css";
-    import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+    import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem, DarkMode } from "flowbite-svelte";
     import { SearchSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
@@ -90,6 +90,7 @@ function getInput() {
         <Input id="website-admin" placeholder="Search..." class="bg-transparent dark:text-white"/>
     </ButtonGroup>
     <button class="rounded-xl p-2 border border-green-500 text-green-800 bg-green-500/20">Create</button>
+    <DarkMode />
      <Dropdown simple>
          <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black">Login</Button></DropdownItem>
      </Dropdown>
