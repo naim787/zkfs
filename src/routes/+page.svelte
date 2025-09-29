@@ -57,6 +57,7 @@
     );
 
     data = JSON.parse(result);
+    console.log(result)
   }
 
 // data heiglight
