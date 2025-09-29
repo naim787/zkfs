@@ -19,6 +19,7 @@
       email : "naimm@gmail.com",
       password : "123",
       note : "123",
+      url : "google.com",
     }
   ]);
 
@@ -28,6 +29,7 @@
   let email = $state("");
   let password = $state("");
   let note = $state("");
+  let url = $state("");
 
 
   // e2ee
@@ -111,9 +113,9 @@ function getInput() {
     <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
         {#each [...data].reverse() as dat}
         <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
-             <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" />
-              <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico" alt="" class=""></div>
-              <h1 class="">{dat.title}</h1>
+             <!-- <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" /> -->
+              <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.ico`} alt="" class=""></div>
+              <h1 class="flex">{dat.title}</h1>
           </button>
         {/each}
     </div>
@@ -143,7 +145,7 @@ function getInput() {
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
           <input type="text" class="w-full dark:bg-black rounded-md outline-0" placeholder="Website"/>
          </div>
-          <div class="w-full border border-black/30 p-2 rounded-md font-thin">
+          <div class="w-full border border-black/30 bg-gray-200 dark:bg-gray-900 p-2 rounded-md font-thin">
             <h1 class="">midifikasi : 12-09-2025</h1>
             <h1 class="">dibuat : 12-08-2025</h1>
           </div>
@@ -173,7 +175,7 @@ function getInput() {
             <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="Password" bind:value={password}/>
             <h1 class="">Note</h1>
             <textarea class="w-full dark:bg-black h-100 rounded-md" bind:value={note}></textarea>
-            <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="website"/>
+            <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="website" bind:value={url}/>
             <button type="button" class="p-2 rounded-md bg-amber-300" onclick={getInput}>Create</button>
         </div>
     </div>
