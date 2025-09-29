@@ -80,7 +80,7 @@ function getInput() {
 
 </script>
 <!-- nav -->
-<div class="w-[100vw] h-26 border-b border-black/30 flex flex-col items-center bg-linear-65 from-sky-100 to-white">
+<div class="w-[100vw] h-26 border-b border-black/30 flex flex-col items-center bg-white dark:bg-gray-900 dark:text-white">
   <div class="w-full h-20 flex items-center justify-center ">
     <img src="./favicon.webp" alt="" class="w-10 rounded-full">
     <ButtonGroup class="w-1/2 bg-white dark:bg-gray-950">
@@ -89,15 +89,15 @@ function getInput() {
         </InputAddon>
         <Input id="website-admin" placeholder="Search..." class="bg-transparent dark:text-white"/>
     </ButtonGroup>
-    <button class="rounded-xl p-2 border border-green-500 text-green-800 bg-green-500/20">Create</button>
+    <button class="rounded-xl p-2 border border-green-500 text-green-800 dark:text-green-300 bg-green-500/20">Create</button>
     <DarkMode />
      <Dropdown simple>
-         <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black">Login</Button></DropdownItem>
+         <DropdownItem><Button onclick={() => ((placement = "right"), (open5 = true))} class="text-black dark:text-white">Login</Button></DropdownItem>
      </Dropdown>
   </div>
   <div class="w-full h-17  flex items-center justify-start">
-    <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-white border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
-    <button type="button" onclick={importVault} class="border p-2 rounded-xl bg-white border-blue-500 shadow text-blue-800 dark:bg-wite">Import</button>
+    <button type="button" onclick={expoRT} class="border p-2 rounded-xl bg-yellow-500/20 dark:text-yellow-200 border-yellow-500 shadow text-yellow-800 dark:bg-wite">Export</button>
+    <button type="button" onclick={importVault} class="border p-2 rounded-xl bg-blue-500/20 dark:text-blue-200 border-blue-500 shadow text-blue-800 dark:bg-wite">Import</button>
   </div>
 </div>
 
@@ -106,17 +106,15 @@ function getInput() {
 
 
 
-<div class="w-[100vw] h-[91vh] bg-linear-65 from-sky-100 to-white flex">
+<div class="w-[100vw] h-[91vh] bg-linear-65 from-sky-100 to-white flex dark:from-sky-900 dark:to-gray-900 dark:text-white dark:border-white">
     <!-- list -->
     <div class="w-1/3 h-full overflow-y-scroll border-r-[1px] border-black/20 p-2 gap-2">
       {#each [...data].reverse() as dat}
-      <button type="button" class="w-full h-15 bg-white rounded-md px-1 flex justify-start items-center my-1 hover:bg-blue-100" onclick={() => {
-        datHeiglight = dat;
-      }}>
-            <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
+      <button type="button" class="w-full h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 hover:bg-blue-100" onclick={() => { datHeiglight = dat;}}>
+          <div class="w-15 h-15 mx-2 flex justify-center items-center"><img src="https://facebook.com/favicon.ico
               " alt="" class=""></div>
-              <h1 class="">{dat.title}</h1>
-            </button>
+          <h1 class="">{dat.title}</h1>
+      </button>
             {/each}
           </div>
           
@@ -125,11 +123,11 @@ function getInput() {
         <div class="w-full h-15 flex justify-end items-center">
           <button type="button" class="p-2 border border-red-500 text-red-800 bg-red-500/20 rounded-md">delete</button>
         </div>
-        <input type="text" class="rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
-        <input type="email" class="rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
-        <input type="text" class="rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
-        <textarea name="" id="" class="w-full h-100 rounded-md">{datHeiglight.note}</textarea>
-        <input type="text" class="rounded-md outline-0" placeholder="Website"/>
+        <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.title} placeholder="title"/>
+        <input type="email" class="dark:bg-black rounded-md outline-0" value={datHeiglight.email} placeholder="email"/>
+        <input type="text" class="dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
+        <textarea name="" id="" class="w-full h-100 dark:bg-black rounded-md">{datHeiglight.note}</textarea>
+        <input type="text" class="dark:bg-black rounded-md outline-0" placeholder="Website"/>
         <div class="w-full border border-black/30 p-2 rounded-md font-thin">
           <h1 class="">midifikasi : 12-09-2025</h1>
           <h1 class="">dibuat : 12-08-2025</h1>
