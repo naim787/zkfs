@@ -1,18 +1,11 @@
 import { authenticator } from 'otplib';
-import { Buffer } from 'buffer';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-
-
-	if (typeof window !== 'undefined') {
-    	window.Buffer = Buffer;
-	}
-
 	authenticator.options = {
 	step: 30,
 	digits: 6    // default Google Authenticator
-   };
+};
 
 const secret = import.meta.env.VITE_API_SECRET;
 console.log('Secret used:', secret);
