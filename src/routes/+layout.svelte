@@ -1,11 +1,13 @@
 <script>
 	import favicon from '$lib/assets/favicon.webp';
-	import { Buffer } from 'buffer';
+	import { onMount } from 'svelte';
 
-	if (typeof window !== 'undefined') {
-	window.Buffer = Buffer;
-	}
-	
+	onMount(async () => {
+		const { Buffer } = await import('buffer');
+		window.Buffer = Buffer;
+	});
+
+
 	let { children } = $props();
 </script>
 
