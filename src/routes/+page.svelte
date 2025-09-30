@@ -4,7 +4,20 @@
     import { ClipboardCleanSolid, PenSolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-    
+
+    // autencitator
+    import { authenticator } from 'otplib';
+    authenticator.options = {
+      step: 30,
+      digits: 6    // default Google Authenticator
+    };
+
+    const secret = import.meta.env.VITE_API_SECRET;
+    console.log('Secret used:', secret);
+
+    const token = authenticator.generate(secret);
+    console.log('Generated OTP:', token);
+        
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
 
     // drawer input
@@ -151,6 +164,10 @@ function getInput() {
          <div class="flex">
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
           <input type="text" class="w-full dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
+         </div>
+         <div class="flex">
+          <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
+          <h1 class="w-full bg-gray-900 text-2xl p-2 rounded-xl">1556</h1>
          </div>
          <div class="flex">
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
