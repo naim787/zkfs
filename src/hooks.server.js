@@ -3,23 +3,25 @@ import { authenticator } from 'otplib';
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
 	const secret = import.meta.env.VITE_API_SECRET;
+
+	if (!secret) {
+		console.error('❌ VITE_API_SECRET tidak ditemukan di .env!');
+		throw new Error('VITE_API_SECRET is not set');
+	}
+
 	const token = authenticator.generate(secret);
-	console.log("ini token", token)
-	// Log URL yang diakses
+	console.log("✅ Token OTP:", token);
+
+	// Logging request
 	console.log('📥 Request masuk:', event.request.method, event.url.pathname);
+	console.log('🧠 User-Agent:', event.request.headers.get('user-agent'));
 
-	// Kamu juga bisa akses cookies, headers, dll
-	const userAgent = event.request.headers.get('user-agent');
-	console.log('🧠 User-Agent:', userAgent);
-
-	// Lanjutkan ke route handler
 	const response = await resolve(event);
 
-	// Tambahkan custom header ke response
 	response.headers.set('x-powered-by', 'SvelteKit');
-
 	return response;
 }
+
 
 
 // import { authenticator } from 'otplib';
