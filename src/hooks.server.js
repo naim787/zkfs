@@ -2,13 +2,16 @@ import { authenticator } from 'otplib';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-	const secret = import.meta.env.VITE_API_SECRET;
-	const cleanSecret = secret.toUpperCase(); // jadi valid base32
+	authenticator.options = {
+	step: 30,    // default Google Authenticator
+	digits: 6    // default Google Authenticator
+};
 
-	const token = authenticator.generate(cleanSecret);
+const secret = import.meta.env.VITE_API_SECRET;
+console.log('Secret used:', secret);
 
-	console.log("otps bro:", cleanSecret);
-	console.log("✅ Token OTP:", token);
+const token = authenticator.generate(secret.toUpperCase());
+console.log('Generated OTP:', token);
 
 	// Logging request
 	// console.log('📥 Request masuk:', event.request.method, event.url.pathname);
