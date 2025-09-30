@@ -3,14 +3,14 @@ import { authenticator } from 'otplib';
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
 	authenticator.options = {
-	step: 30,    // default Google Authenticator
+	step: 30,
 	digits: 6    // default Google Authenticator
 };
 
 const secret = import.meta.env.VITE_API_SECRET;
 console.log('Secret used:', secret);
 
-const token = authenticator.generate(secret.toUpperCase());
+const token = authenticator.generate(secret);
 console.log('Generated OTP:', token);
 
 	// Logging request
