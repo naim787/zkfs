@@ -5,29 +5,38 @@
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-    	import { onMount } from 'svelte';
+    // autencitator
+      import { onMount } from 'svelte';
+  import { authenticator } from 'otplib';
+  // import { Buffer } from 'buffer';
 
-	let otp = '';
+  // Tambahkan Buffer ke window (penting!)
+  // if (typeof window !== 'undefined') {
+  //   window.Buffer = Buffer;
+  // }
 
-	onMount(async () => {
-		const [{ authenticator }, { Buffer }] = await Promise.all([
-			import('otplib'),
-			import('buffer')
-		]);
-
+  onMount(async () => {
+		const { Buffer } = await import('buffer');
 		window.Buffer = Buffer;
-
-		const secret = import.meta.env.VITE_API_SECRET;
-
-		const updateOtp = () => {
-			otp = authenticator.generate(secret);
-		};
-
-		updateOtp();
-		const interval = setInterval(updateOtp, 30_000);
-		return () => clearInterval(interval);
 	});
 
+  const secret = import.meta.env.VITE_API_SECRET;
+
+    const state = $state({
+    otp: ''
+  });
+
+  function updateOtp() {
+    otp = authenticator.generate(secret);
+  }
+
+  onMount(() => {
+    updateOtp(); // Generate langsung
+    const interval = setInterval(updateOtp, 30_000); // Update tiap 30 detik
+
+    return () => clearInterval(interval);
+  });
+    
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
 
     // drawer input
