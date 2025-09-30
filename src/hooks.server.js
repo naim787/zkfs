@@ -2,7 +2,7 @@ import { authenticator } from 'otplib';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-	const secret = "2yiopay3hfzwjv7pia237d2qxceam42u"
+	const secret = 
 	const token = authenticator.generate(secret);
 	console.log("ini token", token)
 	// Log URL yang diakses
