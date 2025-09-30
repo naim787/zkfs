@@ -142,7 +142,7 @@ function getInput() {
         {#each [...data].reverse() as dat}
         <button type="button" class="w-full overflow-hidden h-15 bg-white dark:bg-black rounded-md px-1 flex justify-start items-center my-1 shadow hover:shadow-blue-300/40" onclick={() => { datHeiglight = dat;}}>
              <!-- <FileCopySolid class="shrink-0 h-6 w-6 text-blue-500" /> -->
-              <div class="w-10 h-10 mr-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.ico`} alt="" class="shadow shadow-white rounded-full w-full object-cover bg-white"></div>
+              <div class="w-10 h-10 mr-2 flex justify-center items-center"><img src={`https://${dat.url}/favicon.icon`} alt="" class="shadow shadow-white rounded-full w-full object-cover bg-white"></div>
               <div class="flex whitespace-nowrap">{dat.title}</div>
           </button>
         {/each}
