@@ -6,8 +6,8 @@ export async function handle({ event, resolve }) {
 
 
 	if (typeof window !== 'undefined') {
-  window.Buffer = Buffer;
-}
+    	window.Buffer = Buffer;
+	}
 
 	authenticator.options = {
 	step: 30,
