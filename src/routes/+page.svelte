@@ -6,7 +6,29 @@
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
     // autencitator
-    
+      import { onMount } from 'svelte';
+  import { authenticator } from 'otplib';
+  import { Buffer } from 'buffer';
+
+  // Tambahkan Buffer ke window (penting!)
+  if (typeof window !== 'undefined') {
+    window.Buffer = Buffer;
+  }
+
+  const secret = import.meta.env.VITE_API_SECRET;
+
+  let otp = '';
+
+  function updateOtp() {
+    otp = authenticator.generate(secret);
+  }
+
+  onMount(() => {
+    updateOtp(); // Generate langsung
+    const interval = setInterval(updateOtp, 30_000); // Update tiap 30 detik
+
+    return () => clearInterval(interval);
+  });
     
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
 
@@ -157,7 +179,7 @@ function getInput() {
          </div>
          <div class="flex">
           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
-          <h1 class="w-full bg-gray-900 text-2xl p-2 rounded-xl">1556</h1>
+          <h1 class="w-full bg-gray-900 text-2xl p-2 rounded-xl">{otp}</h1>
          </div>
          <div class="flex">
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
