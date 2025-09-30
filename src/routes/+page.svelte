@@ -14,6 +14,7 @@
   // if (typeof window !== 'undefined') {
   //   window.Buffer = Buffer;
   // }
+  let otp = ''
 
   onMount(async () => {
 		const { Buffer } = await import('buffer');
@@ -21,10 +22,6 @@
 	});
 
   const secret = import.meta.env.VITE_API_SECRET;
-
-    const state = $state({
-    otp: ''
-  });
 
   function updateOtp() {
     otp = authenticator.generate(secret);
