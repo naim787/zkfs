@@ -2,7 +2,7 @@ import { authenticator } from 'otplib';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-	const secret = 
+	const secret = import.meta.env.VITE_API_SECRET;
 	const token = authenticator.generate(secret);
 	console.log("ini token", token)
 	// Log URL yang diakses
