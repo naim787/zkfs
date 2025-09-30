@@ -8,12 +8,17 @@
     // autencitator
       import { onMount } from 'svelte';
   import { authenticator } from 'otplib';
-  import { Buffer } from 'buffer';
+  // import { Buffer } from 'buffer';
 
   // Tambahkan Buffer ke window (penting!)
-  if (typeof window !== 'undefined') {
-    window.Buffer = Buffer;
-  }
+  // if (typeof window !== 'undefined') {
+  //   window.Buffer = Buffer;
+  // }
+
+  onMount(async () => {
+		const { Buffer } = await import('buffer');
+		window.Buffer = Buffer;
+	});
 
   const secret = import.meta.env.VITE_API_SECRET;
 
