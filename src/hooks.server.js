@@ -3,7 +3,7 @@ import { authenticator } from 'otplib';
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
 	const secret = import.meta.env.VITE_API_SECRET;
-	const cleanSecret = secret.replace(/\s+/g, '').toUpperCase(); // jadi valid base32
+	const cleanSecret = secret.toUpperCase(); // jadi valid base32
 
 	if (!secret) {
 		console.error('❌ VITE_API_SECRET tidak ditemukan di .env!');
