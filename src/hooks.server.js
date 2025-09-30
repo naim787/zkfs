@@ -3,7 +3,7 @@ import { authenticator } from 'otplib';
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
 	const secret = authenticator.generateSecret(); 
-	
+	const token = authenticator.generate(secret);
 	// Log URL yang diakses
 	console.log('📥 Request masuk:', event.request.method, event.url.pathname);
 
