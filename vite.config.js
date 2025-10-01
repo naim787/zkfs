@@ -6,21 +6,21 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 
 export default defineConfig({
 	plugins: [sveltekit(),tailwindcss()],
-	resolve: {
-    alias: {
-      buffer: 'buffer',
-    },
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: 'globalThis', // penting untuk polyfill global
-      },
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true,
-        }),
-      ],
-    },
-  },
+	// resolve: {
+  //   alias: {
+  //     buffer: 'buffer',
+  //   },
+  // },
+  // optimizeDeps: {
+  //   esbuildOptions: {
+  //     define: {
+  //       global: 'globalThis', // penting untuk polyfill global
+  //     },
+  //     plugins: [
+  //       NodeGlobalsPolyfillPlugin({
+  //         buffer: true,
+  //       }),
+  //     ],
+  //   },
+  // },
 });
