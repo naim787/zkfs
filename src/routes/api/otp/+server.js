@@ -17,10 +17,10 @@ export async function POST({ request }) {
         digits: 6    // default Google Authenticator
     };
 
-    const secret = import.meta.env.VITE_API_SECRET;
-    console.log('Secret used:', secret);
+    // const secret = import.meta.env.VITE_API_SECRET;
+    console.log('Secret used:', data);
 
-    const token = authenticator.generate(secret);
+    const token = authenticator.generate(data);
     console.log('Generated OTP:', token);
 
 	// Logging request
