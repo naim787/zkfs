@@ -11,13 +11,13 @@ export async function POST({ request }) {
     return json({ error: "Token tidak ada" }, { status: 400 });
   }
 
-  // Opsi: generate OTP (menggunakan token sebagai secret? atau validasi token?)
+  // Opsi: generate OTP
   authenticator.options = {
     step: 30,
     digits: 6
   };
 
-  const otp = authenticator.generate(token); // asumsi `token` adalah `secret`
+  const otp = authenticator.generate(token);
   console.log('🔐 Generated OTP:', otp);
 
   return json({ status: "OTP berhasil dibuat", otp });
