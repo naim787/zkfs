@@ -81,14 +81,14 @@
 let datHeiglight = $state({});
 
 async function getInput() {
- const res = await fetch('/api/otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(token)
-    });
+   const res = await fetch('/api/otp', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token }) // hanya kirim token saja
+  });
 
-    const t = await res.json();
-    console.log(t)
+  const result = await res.json();
+  console.log("OTP response:", result);
     data = [
     ...data, {
         title,
