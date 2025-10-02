@@ -84,7 +84,7 @@ async function getInput() {
  const res = await fetch('/api/otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(result)
+      body: JSON.stringify(token)
     });
 
     const t = await res.json();
