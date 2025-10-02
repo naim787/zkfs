@@ -81,7 +81,7 @@
 let datHeiglight = $state({});
 
 async function getInput() {
- const res = await fetch('/api/vault', {
+ const res = await fetch('/api/otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(result)
