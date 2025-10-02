@@ -42,6 +42,7 @@
   let title = $state("");
   let email = $state("");
   let password = $state("");
+  let token = $state("");
   let note = $state("");
   let url = $state("");
 
@@ -79,7 +80,10 @@
 // data heiglight
 let datHeiglight = $state({});
 
-function getInput() {
+async function getInput() {
+   const res = await fetch('/api/otp');
+    const t = await res.json();
+    console.log(t)
     data = [
     ...data, {
         title,
@@ -192,6 +196,7 @@ function getInput() {
             <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="Title" bind:value={title}/>
             <input type="email" class="border w-full dark:bg-black rounded-md" placeholder="Email" bind:value={email}/>
             <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="Password" bind:value={password}/>
+            <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="Token!!..." bind:value={token}/>
             <h1 class="">Note</h1>
             <textarea class="w-full dark:bg-black h-100 rounded-md" bind:value={note}></textarea>
             <input type="text" class="border w-full dark:bg-black rounded-md" placeholder="website" bind:value={url}/>

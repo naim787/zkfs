@@ -1,4 +1,6 @@
 import { json } from "@sveltejs/kit";
+import { authenticator } from 'otplib';
+
 
 export async function POST({ request }) {
   const body = await request.json();
@@ -9,7 +11,24 @@ export async function POST({ request }) {
     return json({ error: "Data tidak lengkap" }, { status: 400 });
   }
 
-  console.log("data : ", data)
 
-  return json({ status: "Vault terenkripsi berhasil disimpan" });
+    authenticator.options = {
+        step: 30,
+        digits: 6    // default Google Authenticator
+    };
+
+    const secret = import.meta.env.VITE_API_SECRET;
+    console.log('Secret used:', secret);
+
+    const token = authenticator.generate(secret);
+    console.log('Generated OTP:', token);
+
+	// Logging request
+	console.log('📥 Request masuk:', event.request.method, event.url.pathname);
+	console.log('🧠 User-Agent:', event.request.headers.get('user-agent'));
+
+
+  console.log("token autentikasi  : ", data)
+
+  return json({ status: "Vault terenkripsi berhasil disimpan", token });
 }
