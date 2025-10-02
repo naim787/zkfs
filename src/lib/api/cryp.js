@@ -76,4 +76,3 @@ export async function decryptVault(ciphertextB64, password, saltB64, ivB64) {
 
   return dec.decode(decrypted);
 }
-
