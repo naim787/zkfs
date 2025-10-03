@@ -10,6 +10,11 @@
 
     // encription & description
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+      LoadFromIndexedDB();
+    });
 
     // drawer input
   let open5 = $state(false);
