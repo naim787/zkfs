@@ -108,7 +108,8 @@ async function getInput() {
         url,
     },
     ];
-     await SaveToIndexedDB(data);
+    const r = await encryptVault(data, masterPassword);
+     await SaveToIndexedDB(r);
     open5 = false; title = ""; email = "";password = ""; note = "";url = "";
 }
 
