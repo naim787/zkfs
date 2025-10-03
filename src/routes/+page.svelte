@@ -4,7 +4,11 @@
     import { ClipboardCleanSolid, PenSolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
+    import {LoadFromIndexedDB, DeleteFromIndexedDB, SaveToIndexedDB } from "$lib/crud"
     
+
+
+    // encription & description
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
 
     // drawer input
