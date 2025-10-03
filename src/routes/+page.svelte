@@ -163,7 +163,7 @@ async function getInput() {
          </div>
          <div class="flex">
           <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
-          <h1 class="w-full bg-white dark:bg-black text-2xl p-2 rounded-xl border border-gray-500">1455</h1>
+          <h1 class="w-full bg-white dark:bg-black text-2xl p-2 rounded-xl border border-gray-500">....</h1>
          </div>
          <div class="flex">
            <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
