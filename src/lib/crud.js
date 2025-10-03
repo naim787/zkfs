@@ -1,5 +1,6 @@
 import { db } from '$lib/db';
-import { writable } from 'svelte/store';
+import { VaultData } from 'svelte/store';
+import { decryptEntry } from '$lib/crypto-field.js';
 
 export const VaultData = writable([]);
 

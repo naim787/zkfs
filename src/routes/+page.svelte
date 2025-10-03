@@ -8,6 +8,10 @@
     import {VaultData, LoadFromIndexedDB, DeleteFromIndexedDB, SaveToIndexedDB } from "$lib/crud"
     
 
+    // t
+    import { db } from '$lib/db'; 
+// import { encryptEntry } from '$lib/crypto-field.js';
+
 
     // encription & description
     //v2
