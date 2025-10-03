@@ -94,7 +94,7 @@ async function getInput() {
    const res = await fetch('/api/otp', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({  }) // hanya kirim token saja
+    body: JSON.stringify({ otp }) // hanya kirim token saja
   });
 
   const result = await res.json();
