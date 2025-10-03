@@ -9,9 +9,19 @@ export async function SaveToIndexedDB(entry) {
 }
 
 export async function LoadFromIndexedDB() {
-  const result = await db.vault.toArray();
-  VaultData.set(result);
+  const raw = await db.vault.toArray();
+
+  const decryptedData = await Promise.all(
+    raw.map(entry => decryptEntry(entry, masterPassword))
+  );
+
+  VaultData.set(decryptedData);
 }
+
+// export async function LoadFromIndexedDB() {
+//   const result = await db.vault.toArray();
+//   VaultData.set(result);
+// }
 
 export async function DeleteFromIndexedDB(id) {
   await db.vault.delete(id);

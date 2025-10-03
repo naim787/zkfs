@@ -10,7 +10,11 @@
 
 
     // encription & description
-    import { encryptVault, decryptVault } from '$lib/crypto-client.js';
+    //v2
+    // import { encryptVault, decryptVault } from '$lib/crypto-client.js';
+    //v3
+    import { encryptEntry, decryptEntry } from '$lib/crypto-field.js';
+
 
     onMount(() => {
       LoadFromIndexedDB();
@@ -91,27 +95,27 @@
 let datHeiglight = $state({});
 
 async function getInput() {
-   const res = await fetch('/api/otp', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ otp }) // hanya kirim token saja
-  });
+  const newData = {
+    title,
+    email,
+    password,
+    note,
+    url,
+  };
 
-  const result = await res.json();
-  console.log("OTP response:", result);
-    data = [
-    ...data, {
-        title,
-        email,
-        password,
-        note,
-        url,
-    },
-    ];
-    const r = await encryptVault(data, masterPassword);
-     await SaveToIndexedDB(r);
-    open5 = false; title = ""; email = "";password = ""; note = "";url = "";
+  const encrypted = await encryptEntry(newData, masterPassword);
+
+  await db.vault.add(encrypted);
+  await LoadFromIndexedDB();
+
+  open5 = false;
+  title = "";
+  email = "";
+  password = "";
+  note = "";
+  url = "";
 }
+
 
 
 async function copyOTP() {
