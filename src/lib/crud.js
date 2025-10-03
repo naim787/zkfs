@@ -2,7 +2,7 @@ import { db } from '$lib/db';
 
 import { db } from '$lib/db';
 
-export const vaultData = writable([]);
+export const VaultData = writable([]);
 
 // Simpan satu item ke DB
 export async function SaveToIndexedDB(entry) {

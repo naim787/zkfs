@@ -5,8 +5,7 @@
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
     import { onMount } from 'svelte';
-    import { vaultData } from '$lib/stores/vault.js';
-    import {LoadFromIndexedDB, DeleteFromIndexedDB, SaveToIndexedDB } from "$lib/crud"
+    import {VaultData, LoadFromIndexedDB, DeleteFromIndexedDB, SaveToIndexedDB } from "$lib/crud"
     
 
 
@@ -46,6 +45,7 @@
       url : "photos.google.com",
     },
   ]);
+   vaultData.subscribe(val => data = val); // sinkronisasi ke $state kamu
 
 
   // input login
