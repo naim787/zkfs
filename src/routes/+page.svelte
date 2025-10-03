@@ -4,13 +4,14 @@
     import { ClipboardCleanSolid, PenSolid, SearchSolid, UserSolid } from "flowbite-svelte-icons";
     import { Drawer, CardPlaceholder } from "flowbite-svelte";
     import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
+    import { onMount } from 'svelte';
+    import { vaultData } from '$lib/stores/vault.js';
     import {LoadFromIndexedDB, DeleteFromIndexedDB, SaveToIndexedDB } from "$lib/crud"
     
 
 
     // encription & description
     import { encryptVault, decryptVault } from '$lib/crypto-client.js';
-    import { onMount } from 'svelte';
 
     onMount(() => {
       LoadFromIndexedDB();
