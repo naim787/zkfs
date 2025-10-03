@@ -102,7 +102,16 @@ async function getInput() {
 }
 
 
+async function copyOTP() {
+  const res = await fetch('/api/vault');
+  const d = await res.json();
 
+  console.log(d)
+    // Asynchronous, but ini cara standar di browser modern
+  navigator.clipboard.writeText("Halo dari browser!")
+    .then(() => console.log("Teks sudah dicopy"))
+    .catch(err => console.error("Gagal copy:", err));
+}
 
 </script>
 <!-- nav -->
@@ -162,7 +171,7 @@ async function getInput() {
           <input type="text" class="w-full dark:bg-black rounded-md outline-0" value={datHeiglight.password} placeholder="password"/>
          </div>
          <div class="flex">
-          <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" />
+          <ClipboardCleanSolid class="text-gray-700 mr-2 hover:text-white shrink-0 h-6 w-6" onclick={copyOTP}/>
           <h1 class="w-full bg-white dark:bg-black text-2xl p-2 rounded-xl border border-gray-500">....</h1>
          </div>
          <div class="flex">
