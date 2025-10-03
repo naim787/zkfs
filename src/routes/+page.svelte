@@ -103,14 +103,12 @@ async function getInput() {
 
 
 async function copyOTP() {
-  const res = await fetch('/api/vault');
+  const res = await fetch('/api/otp');
   const d = await res.json();
 
   console.log(d)
     // Asynchronous, but ini cara standar di browser modern
-  navigator.clipboard.writeText("Halo dari browser!")
-    .then(() => console.log("Teks sudah dicopy"))
-    .catch(err => console.error("Gagal copy:", err));
+  navigator.clipboard.writeText("Halo dari browser!").then(() => console.log("Teks sudah dicopy")).catch(err => console.error("Gagal copy:", err));
 }
 
 </script>
