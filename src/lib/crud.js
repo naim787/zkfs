@@ -13,7 +13,7 @@ export async function SaveToIndexedDB(entry) {
 // Load semua item dari DB
 export async function LoadFromIndexedDB() {
   const result = await db.vault.toArray();
-   vaultData.set(result);
+   VaultData.set(result);
 }
 
 // Hapus item dari DB (kalau kamu mau fitur delete)

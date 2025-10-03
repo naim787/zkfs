@@ -45,7 +45,7 @@
       url : "photos.google.com",
     },
   ]);
-   vaultData.subscribe(val => data = val); // sinkronisasi ke $state kamu
+   VaultData.subscribe(val => data = val); // sinkronisasi ke $state kamu
 
 
   // input login
