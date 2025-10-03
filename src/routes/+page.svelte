@@ -102,6 +102,7 @@ async function getInput() {
         url,
     },
     ];
+     await SaveToIndexedDB(newItem);
     open5 = false; title = ""; email = "";password = ""; note = "";url = "";
 }
 

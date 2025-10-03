@@ -3,7 +3,7 @@ import { db } from '$lib/db';
 // Simpan satu item ke DB
 export async function SaveToIndexedDB(entry) {
   await db.vault.add(entry);
-  await loadFromIndexedDB();
+  await LoadFromIndexedDB();
 }
 
 // Load semua item dari DB
@@ -15,5 +15,5 @@ export async function LoadFromIndexedDB() {
 // Hapus item dari DB (kalau kamu mau fitur delete)
 export async function DeleteFromIndexedDB(id) {
   await db.vault.delete(id);
-  await loadFromIndexedDB();
+  await LoadFromIndexedDB();
 }
