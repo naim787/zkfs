@@ -106,13 +106,13 @@ async function copyOTP() {
   const res = await fetch('/api/otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token }) // hanya kirim token saja
+        body: JSON.stringify({ token: "2yiopay3hfzwjv7pia237d2qxceam42u" }) // hanya kirim token saja
   });
 
   const result = await res.json();
   console.log("OTP response:", result);
     // Asynchronous, but ini cara standar di browser modern
-  navigator.clipboard.writeText(result).then(() => console.log("Teks sudah dicopy")).catch(err => console.error("Gagal copy:", err));
+  navigator.clipboard.writeText(result.otp).then(() => console.log("Teks sudah dicopy")).catch(err => console.error("Gagal copy:", err));
 }
 
 </script>
