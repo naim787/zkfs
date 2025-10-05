@@ -25,6 +25,7 @@ export async function LoadFromIndexedDB() {
   VaultData.set(decryptedData);
 }
 
+
 // export async function LoadFromIndexedDB() {
 //   const result = await db.vault.toArray();
 //   VaultData.set(result);
