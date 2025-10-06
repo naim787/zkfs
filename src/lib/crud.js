@@ -1,5 +1,5 @@
 import { db } from '$lib/db';
-import { VaultData } from 'svelte/store';
+import { writable } from 'svelte/store'; // ✅ Benar
 import { decryptEntry } from '$lib/crypto-field.js';
 
 // ms pasword 
